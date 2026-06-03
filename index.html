@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚀 Task Manager Pro</h1>
+
+    <!-- Theme Button -->
+    <button onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+    <br><br>
+
+    <!-- Task Input + PRIORITY -->
+    <div class="input-section">
+
+        <input type="text" id="taskInput" placeholder="Enter a task">
+
+        <!-- 🎯 PRIORITY -->
+        <select id="priority">
+            <option value="Low">🟢 Low</option>
+            <option value="Medium" selected>🟡 Medium</option>
+            <option value="High">🔴 High</option>
+        </select>
+
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <br>
+
+    <!-- Search -->
+    <input type="text" id="searchInput" placeholder="🔍 Search tasks..." onkeyup="searchTasks()">
+
+    <br><br>
+
+    <!-- Filters -->
+    <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('Pending')">Pending</button>
+        <button onclick="filterTasks('In Progress')">In Progress</button>
+        <button onclick="filterTasks('Completed')">Completed</button>
+    </div>
+
+    <br>
+
+    <!-- Stats -->
+    <div class="stats">
+        <p>📌 Total Tasks: <span id="totalTasks">0</span></p>
+        <p>✅ Completed Tasks: <span id="completedTasks">0</span></p>
+        <p>⏳ Pending: <span id="pendingTasks">0</span></p>
+        <p>🚧 In Progress: <span id="progressTasks">0</span></p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
